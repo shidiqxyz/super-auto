@@ -1,0 +1,3 @@
+{
+  "targetNetworks": ["base", "optimism", "mode", "unichain", "soneium", "ink", "lisk"]
+}
