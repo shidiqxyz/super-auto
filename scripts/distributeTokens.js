@@ -169,7 +169,7 @@ async function main() {
                     //     await logTransfer(`FAILED_TX: [${currentNetworkName}] Transaksi gagal mengirim ${amountTokens} ${tokenSymbolToDistribute} ke ${walletAddress}. Tx hash: ${tx.hash}. Status: ${receipt.status}`);
                     // }
                     
-                    await new Promise(resolve => setTimeout(resolve, 2000)); // Jeda 2 detik antar transfer
+                    await new Promise(resolve => setTimeout(resolve, 3000)); // Jeda 2 detik antar transfer
 
                 } catch (transferError) {
                     await logTransfer(`ERROR_TRANSFER: [${currentNetworkName}] Gagal mengirim token ke ${walletAddress}: ${transferError.message}`);
