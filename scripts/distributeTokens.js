@@ -62,12 +62,12 @@ async function main() {
     }
     
     let targetWallets = [...allWalletAddresses];
-    if (targetWallets.length > 250) {
+    if (targetWallets.length > 300) {
         for (let i = targetWallets.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [targetWallets[i], targetWallets[j]] = [targetWallets[j], targetWallets[i]];
         }
-        targetWallets = targetWallets.slice(0, 250);
+        targetWallets = targetWallets.slice(0, 300);
     }
     
     console.log(`Akan mengirim token ke ${targetWallets.length} wallet.`);
