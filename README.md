@@ -72,13 +72,7 @@
     ```
     Anda akan diminta memasukkan nama dan simbol token. Informasi deployment akan disimpan di `deployed_tokens.json`.
 
-3.  **Verifikasi Kontrak (Opsional):**
-    Skrip ini membaca `deployed_tokens.json` dan memverifikasi data token on-chain.
-    ```bash
-    npx hardhat run scripts/verifyContracts.js
-    ```
-
-4.  **Distribusi Token ke Banyak Jaringan:**
+3.  **Distribusi Token ke Banyak Jaringan:**
     Skrip ini akan membaca `deploy_config.json` untuk daftar jaringan target dan `address.txt` untuk daftar penerima.
     ```bash
     npx hardhat run scripts/distributeTokens.js
