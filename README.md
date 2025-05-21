@@ -43,16 +43,14 @@
     # GANTI DENGAN KUNCI PRIVAT DARI WALLET TESTNET ANDA!
     PRIVATE_KEY=0xyour_testnet_private_key_here
 
-    # GANTI DENGAN URL RPC TESTNET YANG VALID
-    # Contoh:
-    BASE_SEPOLIA_RPC_URL=https://sepolia.base.org
-    OPTIMISM_SEPOLIA_RPC_URL=https://sepolia.optimism.io
-    LISK_SEPOLIA_RPC_URL=https://rpc.sepolia-api.lisk.com
-    # Tambahkan URL RPC untuk jaringan lain yang Anda gunakan
-
-    # Opsional: API Keys untuk verifikasi kontrak di Etherscan/Blockscout
-    # ETHERSCAN_API_KEY_BASE_SEPOLIA=YOUR_BASESCAN_API_KEY
-    # ETHERSCAN_API_KEY_OPTIMISM_SEPOLIA=YOUR_OPTIMISTIC_ETHERSCAN_API_KEY
+    # RPC URLs (contoh, ganti dengan yang valid)
+    BASE_RPC_URL=https://mainnet.base.org # atau testnet: https://goerli.base.org
+    OPTIMISM_RPC_URL=https://mainnet.optimism.io # atau testnet: https://goerli.optimism.io
+    MODE_RPC_URL=https://mainnet.mode.network # atau testnet
+    UNICHAI_RPC_URL=https://unichain-rpc.publicnode.com # (periksa URL yang benar)
+    SONEIUM_RPC_URL=https://soneium.drpc.org # (periksa URL yang benar)
+    INK_RPC_URL=https://rpc-qnd.inkonchain.com # (periksa URL yang benar)
+    LISK_RPC_URL=https://lisk.drpc.org
     ```
     **PENTING:** Tambahkan `.env` ke file `.gitignore` Anda!
 
