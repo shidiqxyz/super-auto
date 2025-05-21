@@ -11,14 +11,8 @@
 
 1.  **Clone Repositori (Jika Ada) atau Buat Proyek Baru:**
     ```bash
-    git clone <url_repositori_anda> # Jika sudah ada
-    cd my-superchain-deployer
-    ```
-    Jika memulai dari nol:
-    ```bash
-    mkdir my-superchain-deployer
-    cd my-superchain-deployer
-    npm init -y
+    git clone https://github.com/shidiqxyz/super-auto
+    cd super-auto
     ```
 
 2.  **Install Dependensi:**
@@ -54,69 +48,10 @@
     ```
     **PENTING:** Tambahkan `.env` ke file `.gitignore` Anda!
 
-6.  **Konfigurasi Hardhat (`hardhat.config.js`):**
-    Sesuaikan file `hardhat.config.js` Anda untuk menyertakan jaringan target. Contoh:
-    ```javascript
-    require("@nomicfoundation/hardhat-toolbox");
-    require("dotenv").config();
-
-    const {
-      PRIVATE_KEY,
-      BASE_SEPOLIA_RPC_URL, OPTIMISM_SEPOLIA_RPC_URL, LISK_SEPOLIA_RPC_URL,
-      // ETHERSCAN_API_KEY_BASE_SEPOLIA, ETHERSCAN_API_KEY_OPTIMISM_SEPOLIA
-    } = process.env;
-
-    if (!PRIVATE_KEY) { /* ... error handling ... */ }
-
-    module.exports = {
-      solidity: "0.8.20",
-      defaultNetwork: "hardhat",
-      networks: {
-        hardhat: {},
-        base_sepolia: {
-          url: BASE_SEPOLIA_RPC_URL || "",
-          accounts: [PRIVATE_KEY],
-          chainId: 84532,
-        },
-        optimism_sepolia: {
-          url: OPTIMISM_SEPOLIA_RPC_URL || "",
-          accounts: [PRIVATE_KEY],
-          chainId: 11155420,
-        },
-        lisk_sepolia: {
-          url: LISK_SEPOLIA_RPC_URL || "",
-          accounts: [PRIVATE_KEY],
-          chainId: 4202,
-        },
-        // Tambahkan jaringan lain di sini
-      },
-      etherscan: {
-        // apiKey: { /* ... konfigurasi API key explorer ... */ },
-        // customChains: [ /* ... konfigurasi custom explorer ... */ ]
-      },
-      // ...
-    };
-    ```
-    Pastikan versi `solidity` cocok dengan pragma di `MyToken.sol`.
-
-7.  **Siapkan Skrip:**
+6.  **Siapkan Skrip:**
     Pastikan file `scripts/deploy.js`, `scripts/verifyContracts.js`, dan `scripts/distributeTokens.js` ada dan berisi kode yang telah disediakan dalam tutorial (versi yang mendukung multi-network melalui `deploy_config.json`).
 
-8.  **Konfigurasi Jaringan Target (`deploy_config.json`):**
-    Buat file `deploy_config.json` di root proyek. File ini akan menentukan ke jaringan mana skrip `deploy.js` dan `distributeTokens.js` akan beroperasi.
-    ```json
-    // deploy_config.json
-    {
-      "targetNetworks": [
-        "base_sepolia",
-        "optimism_sepolia",
-        "lisk_sepolia"
-      ]
-    }
-    ```
-    Ganti dengan nama jaringan yang sesuai dengan yang ada di `hardhat.config.js`.
-
-9.  **Siapkan Daftar Alamat Penerima (`address.txt`):**
+7.  **Siapkan Daftar Alamat Penerima (`address.txt`):**
     Buat file `address.txt` di root proyek. Isi dengan daftar alamat wallet (satu alamat per baris) yang akan menerima token.
     ```
     0xAlamatWalletTestnetPenerima1................
